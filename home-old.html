@@ -1,16 +1,15 @@
 <!DOCTYPE html>
-<html  lang="en_US">
+<html>
+
 <head>
     <title>Hello</title>
     <meta name="viewport" content="width=device-width, user-scalable=no" />  
     <meta http-equiv="X-UA-Compatible" content="IE=5">
-   
     <link id="style-css" rel="stylesheet" type="text/css"  href="static-dev/css/style.css" media="screen" />
 
     <!-- <script type="text/javascript" src="static-dev/js/min.js">    -->
     </script>
     <script type="text/javascript">
-        var IS_IE = funcCheckBrowser('IE');
         var MAX_SLIDE = 19;
         var MIN_SLIDE = 0;
         var THEME = 'THEME';
@@ -31,49 +30,17 @@
 
         var autoInterval;
         var isAutoShow = false;
-        
-        function funcCheckBrowser(browser) {//Opera,Firefox,Safari,IE,Edge,Chrome,Blink
-            var isOpera = (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
-            var isFirefox = typeof InstallTrigger !== 'undefined';
-            var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification));
-            var isIE = /*@cc_on!@*/false || !!document.documentMode;
-            var isEdge = !isIE && !!window.StyleMedia;
-            var isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
-            var isBlink = (isChrome || isOpera) && !!window.CSS;
-            
-            if(browser == 'Opera') return isOpera;
-            if(browser == 'Firefox') return isFirefox;
-            if(browser == 'Safari') return isSafari;
-            if(browser == 'IE') return isIE;
-            if(browser == 'Edge') return isEdge;
-            if(browser == 'Chrome') return isChrome;
-            if(browser == 'Blink') return isBlink;
-        }        
 
         function funcDisplayById(id, style) {
-            var element = document.getElementById(id);
-            if(!!element) {
-                element.style.display = style;
-            }
+            document.getElementById(id).style.display = style;
         }
 
-        function funcChangeValueById(id, value) {
-            var element = document.getElementById(id);
-            if(!!element) {
-                element.innerHTML = value;
-            }
+        function funcChangeValueById(value, id) {
+            document.getElementById(id).innerHTML = value;
         }
 
         function funcChangeWidthById(idSet, idGet, idental) {
-            var element = document.getElementById(idGet);
-            var width = '';
-            if(!!element) { 
-                width = (element.offsetWidth + idental) +'px';
-            }
-            element = document.getElementById(idSet);
-            if(!!element) {
-                element.style.width = width;
-            }
+            document.getElementById(idSet).style.width = (document.getElementById(idGet).offsetWidth + idental) + 'px';
         }
 
         function funcPushSlide(n) {
@@ -85,10 +52,6 @@
 
         function funcShowSlide(n) {
             var itemShow;
-            var elements;
-            var index = 0;
-            var length = 0;
-
             if (!!n) {
                 countSlideShow = n;
             }
@@ -107,41 +70,38 @@
                 countSlideShow = parseInt(MAX_SLIDE / itemShow);
             }
 
-            elements = document.getElementsByTagName('item-image');
-            if (!!elements) {
-                length = elements.length;
-                for(index = 0; index <length; index ++) {
-                    if(!!elements[index]) {
-                        if (countSlideShow == parseInt(index / itemShow)) {
-                            elements[index].style.display = "block";
-                        } else {
-                            elements[index].style.display = "none";
-                        }
-                    }
+            Array.prototype.slice.call(document.getElementsByClassName('item-image')).forEach(function(element, index) {
+                if (countSlideShow == parseInt(index / itemShow)) {
+                    element.style.display = "block";
+                } else {
+                    element.style.display = "none";
                 }
-            }            
-        }        
+            });
+        }
 
-        function funcSetDataToolTip(id, value) {         
+        function funcSetDataToolTip(id, value) {
             //title,img,alternative,author,update,view,genres,summary
             var element = document.getElementById(id);
-            if (!!element) {
-                element.getElementsByTagName('detail-title')[0].innerHTML = value.title;
-                element.getElementsByTagName('img')[0].src = value.img;
-                element.getElementsByTagName('body-alternative')[0].innerHTML = value.alternative;
-                element.getElementsByTagName('body-author')[0].innerHTML = value.author;
-                element.getElementsByTagName('body-update')[0].innerHTML = value.update;
-                element.getElementsByTagName('body-view')[0].innerHTML = value.view;
-                element.getElementsByTagName('body-genres')[0].innerHTML = value.genres;
-            }
+            element.getElementsByClassName('detail-title')[0].innerHTML = value.title;
+            element.getElementsByTagName('img')[0].src = value.img;
+            element.getElementsByClassName('body-alternative')[0].innerHTML = value.alternative;
+            element.getElementsByClassName('body-author')[0].innerHTML = value.author;
+            element.getElementsByClassName('body-update')[0].innerHTML = value.update;
+            element.getElementsByClassName('body-view')[0].innerHTML = value.view;
+            element.getElementsByClassName('body-genres')[0].innerHTML = value.genres;
         }
 
-        function funcArrayToJson(array) {
-            return JSON.stringify(array);
+        function funcMapToJson(map) {
+            return JSON.stringify(Array.from(map));
         }
 
-        function funcJsonToArray(json) {
-            return JSON.parse(json);
+        function funcJsonToMap(json) {
+            var array = JSON.parse(json);
+            var newMap = new Map();
+            array.forEach(function(element, index) {
+                newMap.set(element[0], element[1]);
+            });
+            return newMap;
         }
 
         function funcChangePositionById(id, event) {
@@ -190,71 +150,53 @@
         }
 
         window.onload = function() {
-            var element = "";
-            var elements = "";
-            var index = 0;
-            var length = 0;
+            // var element = document.getElementById('menu-drop-content');
+            // var elements = element.getElementsByTagName('div'); 
+            // var index = 0, length = elements.length;
+            // for (index = 0; index < length; index++) {
+            //     if (!! elements[index]) {
+            //             elements[index].onclick = function() {
+            //             funcChangeValueById(elements[index].innerHTML, 'menu-drop-button')
+            //         }
+            //     }                
+            // }
 
-            element = document.getElementById('menu-drop-content');
-            if (!! element) {
-                elements = element.getElementsByTagName('div');
-                if(!!elements) {
-                    length = elements.length;
-                    for (index= 0; index <length; index++) {
-                        if (!! elements[index]) {
-                            elements[index].onclick = function () {
-                                funcChangeValueById('menu-drop-button', value.innerHTML)
-                            }
-                        }
-                    }
+            Array.prototype.slice.call(document.getElementById('menu-drop-content').getElementsByTagName('div')).forEach(function(value, index) {
+                value.onclick = function() {
+                    funcChangeValueById(value.innerHTML, 'menu-drop-button')
                 }
-            }
-
-            element = document.getElementById('search-display');
-            if(!!element) {
-                elements = element.getElementsByTagName('input');
-                if(!!elements) {
-                    if(!!elements[0]) {
-                        elements[0].onclick = function() {
-                            funcDisplayById('search-result', 'block');
-                            funcChangeWidthById('search-result', 'search-display', -15);
-                        };
-                        elements[0].onblur = function() {
-                            funcDisplayById('search-result', 'none');
-                        };
-                        elements[0].autocomplete = "off";
-                    }
-                } 
-            }
+            });
+            Array.prototype.slice.call(document.getElementById('search-display').getElementsByTagName('input')).forEach(function(value, index) {
+                value.onclick = function() {
+                    funcDisplayById('search-result', 'block');
+                    funcChangeWidthById('search-result', 'search-display', -15);
+                };
+                value.onblur = function() {
+                    funcDisplayById('search-result', 'none');
+                };
+                value.autocomplete = "off";
+            });
             
             funcChangeWidthById('search-result', 'search-display', -15);
             funcDisplayById('search-result', 'none');
-
-            element = document.getElementById('item-prev');
-            if(!!element) {
-                element.onclick = function() {
+        
+            Array.prototype.slice.call(document.getElementsByClassName('item-prev')).forEach(function(value, index){
+                value.onclick = function() {
                     funcPushSlide(-1);
                 }
-            }
+            });
 
-            element = document.getElementById('item-next');
-            if(!!element) {
-                element.onclick = function() {
+            Array.prototype.slice.call(document.getElementsByClassName('item-next')).forEach(function(value, index){
+                value.onclick = function() {
                     funcPushSlide(1);
-                }
-            }
+                }        
+            });
 
-            elements = document.getElementsByTagName('func-light');            
-            if(!!elements) {
-                length = elements.length;
-                for (index = 0; index <length; index++) {
-                    if(!!elements[index]) {
-                        elements[index].onclick = function() {
-                            lightNavFunc();
-                        } 
-                    }
-                }
-            }
+            Array.prototype.slice.call(document.getElementsByClassName('func-light')).forEach(function(value, index){
+                value.onclick = function() {
+                    lightNavFunc();
+                } 
+            });
 
             funcShowSlide();
 
@@ -267,7 +209,7 @@
             }, TIME_OUT_SLIDE_SHOW);
 
             //set content
-            var newMap = [];
+            var newMap = new Map();
             var obj1 = {
                 title: "Manga 1",
                 img: "https://avatar.novelonlinefree.com/avatar_novels/21177-the_diary_of_the_koi_prince.jpg",
@@ -298,37 +240,28 @@
                 genres: "44444444444",
                 summary: "4wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww"
             }
-            newMap.push(obj1);
-            newMap.push(obj2);
-            newMap.push(obj3);
+            newMap.set("key1", obj1);
+            newMap.set("key2", obj2);
+            newMap.set("key3", obj3);
 
             //get content
-            // localStorage.setItem(TOOLTIP_INFO, funcArrayToJson(newMap));
-            // var tooltipInfo = funcJsonToArray(localStorage.getItem(TOOLTIP_INFO));
+            localStorage.setItem(TOOLTIP_INFO, funcMapToJson(newMap));
+            var tooltipInfo = funcJsonToMap(localStorage.getItem(TOOLTIP_INFO));
 
             //getToolTip
-            elements = document.getElementsByTagName('tooltip');
-            if (!!elements) {
-                length = elements.length;
-                for (index =0 ; index <length; index ++) {
-                    var key = parseInt(index/2);
-                    if (!! elements[index]) {
-                        element.onmouseout = function(event) {
-                            funcDisplayById(ID_TOOL_TIP, 'none');
-                        }
-                        elements[index].onmouseenter = function(event) {
-                            debugger;
-                            funcSetDataToolTip(ID_TOOL_TIP, newMap[key]);
-                        }
-                        elements[index].onmousemove = function(event) {
-                            funcDisplayById(ID_TOOL_TIP, 'block');
-                            funcChangePositionById(ID_TOOL_TIP, event);
-                        }
-                    }
+            var itemTooltips = document.getElementsByClassName('item-tooltip');
+            Array.prototype.slice.call(itemTooltips).forEach(function(element, index) {
+                element.onmouseout = function(event) {
+                    funcDisplayById(ID_TOOL_TIP, 'none');
                 }
-            }
-
-            
+                element.onmouseenter = function(event) {
+                    funcSetDataToolTip(ID_TOOL_TIP, tooltipInfo.get(element.getAttribute('data')));
+                }
+                element.onmousemove = function(event) {
+                    funcDisplayById(ID_TOOL_TIP, 'block');
+                    funcChangePositionById(ID_TOOL_TIP, event);
+                }
+            });
 
             //scroll function
             var element = document.getElementById(SCROLL_BUTTON_ID);
@@ -338,12 +271,23 @@
                 }
             }
         }
-        element = document.getElementsByName('body');
-        if (!!element) {
-            element.onload = function() {
-                console.log("ON LOAD");
-            }
-        }        
+        document.getElementsByTagName('body')[0].onload = function() {
+            theme = localStorage.getItem(THEME);
+            if (!!theme) {
+                if (theme == THEME_DARK) {
+                    lightNavFunc(THEME_DARK);
+                }
+            };
+        }
+
+        // document.addEventListener("DOMContentLoaded", function() {
+        //     theme = localStorage.getItem(THEME);
+        //     if (!!theme) {
+        //         if (theme == THEME_DARK) {
+        //             lightNavFunc(THEME_DARK);
+        //         }
+        //     };
+        // });
     </script>
     <!-- seo -->
     <meta name="description" content="Yoast helps you with your website optimization, whether it be through our widely used SEO software or our online SEO courses: we&#039;re here to help."/>
@@ -378,9 +322,9 @@
             </div>
             <div class="function-auth">
                 <div class="login-no">
-                    <func-light class="func-light">
+                    <div class="func-light">
                         <span class="icons-light"></span>
-                    </func-light>
+                    </div>
                     <div class="func-login">
                         <span class="icon-login"></span>
                     </div>
@@ -389,9 +333,9 @@
                     </div>
                 </div>
                 <div class="login-yes">
-                    <func-light class="func-light">
+                    <div class="func-light">
                         <span class="icons-light"></span>
-                    </func-light>
+                    </div>
                     <div class="func-bookmark">
                         <span class="icon-bookmark"></span>
                     </div>
@@ -444,7 +388,7 @@
                 <span class="icon-thum-up"></span> POPULAR MANGA
             </div>
             <div class="slideshow-body">
-                <item-image class="item-image fade">
+                <div class="item-image fade">
                     <img onerror="javascript:this.src='static-dev/img/404-avatar.png';"  onerror="javascript:this.src='static-dev/img/404-avatar.png';"  src="https://avata.novelonlinefree.com/avatar_novels/21159-stay_away_from_him.jpg">
                     <div class="image-content">
                         <a href="#">
@@ -455,8 +399,8 @@
                             <div class="content-logo"><span class="icon-arrow-auto"></span></div>
                         </a>
                     </div>
-                </item-image>
-                <item-image class="item-image fade">
+                </div>
+                <div class="item-image fade">
                     <img onerror="javascript:this.src='static-dev/img/404-avatar.png';"  onerror="javascript:this.src='static-dev/img/404-avatar.png';"  src="https://avatar.novelonlinefree.com/avatar_novels/21162-imperium.jpg">
                     <div class="image-content">
                         <a href="#">
@@ -467,8 +411,8 @@
                             <div class="content-logo"><span class="icon-arrow-auto"></span></div>
                         </a>
                     </div>
-                </item-image>
-                <item-image class="item-image fade">
+                </div>
+                <div class="item-image fade">
                     <img onerror="javascript:this.src='static-dev/img/404-avatar.png';"  onerror="javascript:this.src='static-dev/img/404-avatar.png';"  src="https://avatar.novelonlinefree.com/avatar_novels/21160-the_last_king_of_demons.jpg">
                     <div class="image-content">
                         <a href="#">
@@ -480,8 +424,8 @@
 
                         </a>
                     </div>
-                </item-image>
-                <item-image class="item-image fade">
+                </div>
+                <div class="item-image fade">
                     <img onerror="javascript:this.src='static-dev/img/404-avatar.png';"  onerror="javascript:this.src='static-dev/img/404-avatar.png';"  src="https://avatar.novelonlinefree.com/avatar_novels/21158-training_to_be_a_perfect_lover.jpg">
                     <div class="image-content">
                         <a href="#">
@@ -493,8 +437,8 @@
 
                         </a>
                     </div>
-                </item-image>
-                <item-image class="item-image fade">
+                </div>
+                <div class="item-image fade">
                     <img onerror="javascript:this.src='static-dev/img/404-avatar.png';"  onerror="javascript:this.src='static-dev/img/404-avatar.png';"  src="https://avatar.novelonlinefree.com/avatar_novels/21161-immortal_ashes.jpg">
                     <div class="image-content">
                         <a href="#">
@@ -506,8 +450,8 @@
 
                         </a>
                     </div>
-                </item-image>
-                <item-image class="item-image fade">
+                </div>
+                <div class="item-image fade">
                     <img onerror="javascript:this.src='static-dev/img/404-avatar.png';"  onerror="javascript:this.src='static-dev/img/404-avatar.png';"  src="https://avatar.novelonlinefree.com/avatar_novels/21157-book_of_the_dao.jpg">
                     <div class="image-content">
                         <a href="#">
@@ -518,8 +462,8 @@
                             <div class="content-logo"><span class="icon-arrow-auto"></span></div>
                         </a>
                     </div>
-                </item-image>
-                <item-image class="item-image fade">
+                </div>
+                <div class="item-image fade">
                     <img onerror="javascript:this.src='static-dev/img/404-avatar.png';"  onerror="javascript:this.src='static-dev/img/404-avatar.png';"  src="https://avatar.novelonlinefree.com/avatar_novels/21156-when_i_saw_you.jpg">
                     <div class="image-content">
                         <a href="#">
@@ -531,7 +475,7 @@
                         </a>
                     </div>
                 </div>
-                <item-image class="item-image fade">
+                <div class="item-image fade">
                     <img onerror="javascript:this.src='static-dev/img/404-avatar.png';"  onerror="javascript:this.src='static-dev/img/404-avatar.png';"  src="https://avatar.novelonlinefree.com/avatar_novels/21153-secret_heart.jpg">
                     <div class="image-content">
                         <a href="#">
@@ -542,8 +486,8 @@
                             <div class="content-logo"><span class="icon-arrow-auto"></span></div>
                         </a>
                     </div>
-                </item-image>
-                <item-image class="item-image fade">
+                </div>
+                <div class="item-image fade">
                     <img onerror="javascript:this.src='static-dev/img/404-avatar.png';"  onerror="javascript:this.src='static-dev/img/404-avatar.png';"  src="https://avatar.novelonlinefree.com/avatar_novels/21155-a_day_spent_doing_nothing.jpg">
                     <div class="image-content">
                         <a href="#">
@@ -554,8 +498,8 @@
                             <div class="content-logo"><span class="icon-arrow-auto"></span></div>
                         </a>
                     </div>
-                </item-image>
-                <item-image class="item-image fade">
+                </div>
+                <div class="item-image fade">
                     <img onerror="javascript:this.src='static-dev/img/404-avatar.png';"  onerror="javascript:this.src='static-dev/img/404-avatar.png';"  src="https://avatar.novelonlinefree.com/avatar_novels/21151-nightingales_wish_came_true.jpg">
                     <div class="image-content">
                         <a href="#">
@@ -566,8 +510,8 @@
                             <div class="content-logo"><span class="icon-arrow-auto"></span></div>
                         </a>
                     </div>
-                </item-image>
-                <item-image class="item-image fade">
+                </div>
+                <div class="item-image fade">
                     <img onerror="javascript:this.src='static-dev/img/404-avatar.png';"  onerror="javascript:this.src='static-dev/img/404-avatar.png';"  src="https://avatar.novelonlinefree.com/avatar_novels/21148-the_neet_magical_girl.jpg">
                     <div class="image-content">
                         <a href="#">
@@ -578,8 +522,8 @@
                             <div class="content-logo"><span class="icon-arrow-auto"></span></div>
                         </a>
                     </div>
-                </item-image>
-                <item-image class="item-image fade">
+                </div>
+                <div class="item-image fade">
                     <img onerror="javascript:this.src='static-dev/img/404-avatar.png';"  onerror="javascript:this.src='static-dev/img/404-avatar.png';"  src="https://avatar.novelonlinefree.com/avatar_novels/21145-the_girl_with_the_cross.jpg">
                     <div class="image-content">
                         <a href="#">
@@ -590,8 +534,8 @@
                             <div class="content-logo"><span class="icon-arrow-auto"></span></div>
                         </a>
                     </div>
-                </item-image>
-                <item-image class="item-image fade">
+                </div>
+                <div class="item-image fade">
                     <img onerror="javascript:this.src='static-dev/img/404-avatar.png';"  onerror="javascript:this.src='static-dev/img/404-avatar.png';"  src="https://avatar.novelonlinefree.com/avatar_novels/21150-the_phoenix_hero.jpg">
                     <div class="image-content">
                         <a href="#">
@@ -602,8 +546,8 @@
                             <div class="content-logo"><span class="icon-arrow-auto"></span></div>
                         </a>
                     </div>
-                </item-image>
-                <item-image class="item-image fade">
+                </div>
+                <div class="item-image fade">
                     <img onerror="javascript:this.src='static-dev/img/404-avatar.png';"  onerror="javascript:this.src='static-dev/img/404-avatar.png';"  src="https://avatar.novelonlinefree.com/avatar_novels/21142-gibberish.jpg">
                     <div class="image-content">
                         <a href="#">
@@ -614,8 +558,8 @@
                             <div class="content-logo"><span class="icon-arrow-auto"></span></div>
                         </a>
                     </div>
-                </item-image>
-                <item-image class="item-image fade">
+                </div>
+                <div class="item-image fade">
                     <img onerror="javascript:this.src='static-dev/img/404-avatar.png';"  onerror="javascript:this.src='static-dev/img/404-avatar.png';"  src="https://avatar.novelonlinefree.com/avatar_novels/21182-setoutsumi.jpg">
                     <div class="image-content">
                         <a href="#">
@@ -626,8 +570,8 @@
                             <div class="content-logo"><span class="icon-arrow-auto"></span></div>
                         </a>
                     </div>
-                </item-image>
-                <item-image class="item-image fade">
+                </div>
+                <div class="item-image fade">
                     <img onerror="javascript:this.src='static-dev/img/404-avatar.png';"  onerror="javascript:this.src='static-dev/img/404-avatar.png';"  src="https://avatar.novelonlinefree.com/avatar_novels/21177-the_diary_of_the_koi_prince.jpg">
                     <div class="image-content">
                         <a href="#">
@@ -638,8 +582,8 @@
                             <div class="content-logo"><span class="icon-arrow-auto"></span></div>
                         </a>
                     </div>
-                </item-image>
-                <item-image class="item-image fade">
+                </div>
+                <div class="item-image fade">
                     <img onerror="javascript:this.src='static-dev/img/404-avatar.png';"  onerror="javascript:this.src='static-dev/img/404-avatar.png';"  src="https://avatar.novelonlinefree.com/avatar_novels/21177-the_diary_of_the_koi_prince.jpg">
                     <div class="image-content">
                         <a href="#">
@@ -650,8 +594,8 @@
                             <div class="content-logo"><span class="icon-arrow-auto"></span></div>
                         </a>
                     </div>
-                </item-image>
-                <item-image class="item-image fade">
+                </div>
+                <div class="item-image fade">
                     <img onerror="javascript:this.src='static-dev/img/404-avatar.png';"  onerror="javascript:this.src='static-dev/img/404-avatar.png';"  src="https://avatar.novelonlinefree.com/avatar_novels/21177-the_diary_of_the_koi_prince.jpg">
                     <div class="image-content">
                         <a href="#">
@@ -662,8 +606,8 @@
                             <div class="content-logo"><span class="icon-arrow-auto"></span></div>
                         </a>
                     </div>
-                </item-image>
-                <item-image class="item-image fade">
+                </div>
+                <div class="item-image fade">
                     <img onerror="javascript:this.src='static-dev/img/404-avatar.png';"  onerror="javascript:this.src='static-dev/img/404-avatar.png';"  src="https://avatar.novelonlinefree.com/avatar_novels/21177-the_diary_of_the_koi_prince.jpg">
                     <div class="image-content">
                         <a href="#">
@@ -674,8 +618,8 @@
                             <div class="content-logo"><span class="icon-arrow-auto"></span></div>
                         </a>
                     </div>
-                </item-image>
-                <item-image class="item-image fade">
+                </div>
+                <div class="item-image fade">
                     <img onerror="javascript:this.src='static-dev/img/404-avatar.png';"  onerror="javascript:this.src='static-dev/img/404-avatar.png';"  src="https://avatar.novelonlinefree.com/avatar_novels/21177-the_diary_of_the_koi_prince.jpg">
                     <div class="image-content">
                         <a href="#">
@@ -686,9 +630,9 @@
                             <div class="content-logo"><span class="icon-arrow-auto"></span></div>
                         </a>
                     </div>
-                </item-image>
-                <div id="item-prev" class="item-prev">&#10094;</div>
-                <div id="item-next" class="item-next">&#10095;</div>
+                </div>
+                <div class="item-prev">&#10094;</div>
+                <div class="item-next">&#10095;</div>
             </div>
         </div>
         <div class="main-manga">
@@ -698,18 +642,13 @@
                 </div>
             </div>
             <div class="manga-item">
-                <tooltip value="1">
-                    <a href="#">                  
-                        <img onerror="javascript:this.src='static-dev/img/404-avatar.png';"  onerror="javascript:this.src='static-dev/img/404-avatar.png';"  src="https://avata.novelonlinefree.com/avatar_novels/21159-stay_away_from_him.jpg">
-                    </a>
-                </tooltip>
+                <a href="#" class="item-tooltip" data="key1">
+                    <img onerror="javascript:this.src='static-dev/img/404-avatar.png';"  onerror="javascript:this.src='static-dev/img/404-avatar.png';"  src="https://avata.novelonlinefree.com/avatar_novels/21159-stay_away_from_him.jpg">
+                </a>
                 <ul>
-                    <tooltip value="1">
-                        <li>
-                            <div> <a href="#">
-                            Manga Name 1 3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333</a> </div>
-                        </li>
-                    </tooltip>
+                    <li>
+                        <div> <a class="item-tooltip" data="key1" href="#">Manga Name 1 3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333</a> </div>
+                    </li>
                     <li>
                         <span> <a href="#">Chapter Name 133333333333333333333333333333333333333333333333333333333333333333333333333</a> </span>
                         <i>Time 1</i>
@@ -725,17 +664,13 @@
                 </ul>
             </div>
             <div class="manga-item">
-                <tooltip value="2">
-                    <a href="#">
-                        <img onerror="javascript:this.src='static-dev/img/404-avatar.png';"  onerror="javascript:this.src='static-dev/img/404-avatar.png';"  src="https://avatar.novelonlinefree.com/avatar_novels/21162-imperium.jpg">
-                    </a>
-                </tooltip>
+                <a href="#" class="item-tooltip" data="key2">
+                    <img onerror="javascript:this.src='static-dev/img/404-avatar.png';"  onerror="javascript:this.src='static-dev/img/404-avatar.png';"  src="https://avatar.novelonlinefree.com/avatar_novels/21162-imperium.jpg">
+                </a>
                 <ul>
-                    <tooltip value="2">
-                        <li>
-                            <div> <a href="#">Manga Name 1</a> </div>
-                        </li>
-                    </tooltip>
+                    <li>
+                        <div> <a class="item-tooltip" data="key2" href="#">Manga Name 1</a> </div>
+                    </li>
                     <li>
                         <span> <a href="#">Chapter Name 1</a> </span>
                         <i>Time 1</i>
@@ -751,17 +686,13 @@
                 </ul>
             </div>
             <div class="manga-item">
-                <tooltip value="3">
-                    <a href="#">
-                        <img onerror="javascript:this.src='static-dev/img/404-avatar.png';"  onerror="javascript:this.src='static-dev/img/404-avatar.png';"  src="https://avatar.novelonlinefree.com/avatar_novels/21160-the_last_king_of_demons.jpg">
-                    </a>
-                </tooltip>
+                <a href="#" class="item-tooltip" data="key3">
+                    <img onerror="javascript:this.src='static-dev/img/404-avatar.png';"  onerror="javascript:this.src='static-dev/img/404-avatar.png';"  src="https://avatar.novelonlinefree.com/avatar_novels/21160-the_last_king_of_demons.jpg">
+                </a>
                 <ul>
-                    <tooltip value="3">
-                        <li>
-                            <div> <a href="#">Manga Name 1</a> </div>
-                        </li>
-                    </tooltip>
+                    <li>
+                        <div> <a class="item-tooltip" data="key3" href="#">Manga Name 1</a> </div>
+                    </li>
                     <li>
                         <span> <a href="#">Chapter Name 1</a> </span>
                         <i>Time 1</i>
@@ -1295,16 +1226,16 @@
 </body>
 <div class="other-content">
     <div id="item-detail-info" class="item-detail">
-        <detail-title class="over-text">Title</detail-title>
+        <div class="detail-title over-text">Title</div>
         <div class="detail-content">
             <div class="content-info">
                 <img onerror="javascript:this.src='static-dev/img/404-avatar.png';"  onerror="javascript:this.src='static-dev/img/404-avatar.png';"  src="https://avata.novelonlinefree.com/avatar_novels/21159-stay_away_from_him.jpg">
                 <div class="info-body">
-                    <body-alternative class="body-alternative">ADEEE </body-alternative>
-                    <body-author class="body-author">ADEEE </body-author>
-                    <body-update class="body-update">ADEEE </body-update>
-                    <body-view class="body-view">ADEEE </body-view>
-                    <body-genres class="body-genres">ADEEE </body-genres>
+                    <p class="body-alternative">ADEEE </p>
+                    <p class="body-author">ADEEE </p>
+                    <p class="body-update">ADEEE </p>
+                    <p class="body-view">ADEEE </p>
+                    <p class="body-genres">ADEEE </p>
                 </div>
             </div>
             <div class="content-summary">

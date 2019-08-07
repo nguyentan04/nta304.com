@@ -744,7 +744,7 @@ body {
   position: absolute;
 }
 
-#item-detail-info.item-detail .detail-title {
+#item-detail-info.item-detail detail-title {
   font-size: var(--font--size--hightlightes);
   font-weight: bold;
   padding-bottom: 5px;
@@ -786,23 +786,23 @@ body {
   font-weight: bold;
 }
 
-#item-detail-info.item-detail .detail-content .content-info .info-body .body-alternative::before {
+#item-detail-info.item-detail .detail-content .content-info .info-body body-alternative::before {
   content: "Alternative: ";
 }
 
-#item-detail-info.item-detail .detail-content .content-info .info-body .body-author::before {
+#item-detail-info.item-detail .detail-content .content-info .info-body body-author::before {
   content: "Author(s): ";
 }
 
-#item-detail-info.item-detail .detail-content .content-info .info-body .body-update::before {
+#item-detail-info.item-detail .detail-content .content-info .info-body body-update::before {
   content: "Update: ";
 }
 
-#item-detail-info.item-detail .detail-content .content-info .info-body .body-view::before {
+#item-detail-info.item-detail .detail-content .content-info .info-body body-view::before {
   content: "View: ";
 }
 
-#item-detail-info.item-detail .detail-content .content-info .info-body .body-genres::before {
+#item-detail-info.item-detail .detail-content .content-info .info-body body-genres::before {
   content: "Genres: ";
 }
 
