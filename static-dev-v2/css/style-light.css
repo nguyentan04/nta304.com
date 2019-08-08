@@ -1,0 +1,1284 @@
+body {
+  background-image: url('../img/bg-light.png');
+  background-color: #ffffff;
+  color: #1e282f;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-size: 15px;
+  margin: 0px;
+  padding: 0px;
+  border-top: 3px solid #a3865b;
+}
+
+.nav {
+  margin: 20px 50px 0px 50px;
+}
+
+.nav [class ^="nav-"] {
+  padding: 5px 0px 5px 10px;
+}
+
+.nav .nav-function {
+  display: inline-block;
+  width:100%;
+  padding-top: 15px;
+}
+
+.nav .nav-function [class^="function-"] {
+  float:left;
+  width: 48%;
+  display:inline-block;
+}
+
+.nav .nav-function .function-auth {
+  text-align: right;
+}
+
+.nav .nav-function .login-yes {
+  display: none;
+}
+
+.nav .nav-function .login-no {
+  display: block;
+}
+
+.nav .nav-menu .menu-web div {
+  display: inline;
+  padding: 0px 5px;
+}
+
+.nav .nav-menu .menu-web:first-child {
+  padding: 0px 5px 0px 0px;
+}
+
+.nav .nav-menu .menu-drop {
+  display: none;
+  position: relative;
+}
+
+.nav .nav-menu .menu-drop .menu-drop-content {
+  display: none;
+  position: absolute;
+  background-color: #62a5a1;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.nav .nav-menu .menu-drop .menu-drop-content div {
+  display: block;
+  padding: 12px 10px;
+}
+
+.nav .nav-menu .menu-drop .menu-drop-content div:hover {
+  background-color: #a3865b;
+}
+
+.nav .nav-function .function-auth [class^="func-"] {
+  display: inline;
+  padding: 0px 5px;
+}
+
+.nav .nav-menu .menu-web div:hover,
+[class^="func-"]:hover {
+  color: #a3865b;
+  cursor: pointer;
+}
+
+.nav .nav-search #search-display:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.nav .nav-search #search-display:not(:last-child) {
+  border-right: none;
+}
+
+.nav .nav-search #search-display input[type=text] {
+  border-radius: 5px 0px 0px 5px;
+  -webkit-border-radius: 5px 0px 0px 5px;
+  -moz-border-radius: 5px 0px 0px 5px;
+  float: left;
+  font-size: 17px;
+  border: none;
+  width: 80%;
+  padding: 10px 0px 10px 5px;
+}
+
+.nav .nav-search #search-display button {
+  border-radius: 0px 5px 5px 0px;
+  -webkit-border-radius:  0px 5px 5px 0px;
+  -moz-border-radius:  0px 5px 5px 0px;
+  float: left;
+  width: 15%;
+  padding: 9px 10px 9px 0px;
+  font-size: 17px;
+  border: none;
+  color: #ffffff;
+  background-color: #ff02bd;
+}
+
+.nav .nav-search #search-display button:hover {
+  color: #1e282f;
+  background-color: #b6b6b6;
+}
+
+.nav .nav-search #search-result {
+  position: absolute;
+  display: block;
+  width: 99%;
+  background-color: #a3865b;
+}
+
+.content-main {
+  color: #1e282f;
+  margin: 5px 50px;
+  display:block;
+}
+
+.content-main .main-slideshow {}
+
+.content-main .main-slideshow .slideshow-header {
+  display: inline-block;
+  padding: 5px 10px;
+}
+
+.content-main .main-slideshow .slideshow-body {
+  position: relative;
+  display:inline-block;
+  width:100%;  
+}
+
+.content-main .main-slideshow .slideshow-body .item-image {
+  width:25%;
+  display: none;
+  float:left;
+}
+
+.content-main .main-slideshow .slideshow-body .item-next,
+.content-main .main-slideshow .slideshow-body .item-prev {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  background-color: #1e282f;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 17px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  -webkit-border-radius:  0 3px 3px 0;
+  -moz-border-radius:  0 3px 3px 0;
+  user-select: none;
+}
+
+.content-main .main-slideshow .slideshow-body .item-next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+  -webkit-border-radius:  3px 0 0 3px;
+  -moz-border-radius:  3px 0 0 3px;
+  margin-right: 2px;
+}
+
+.content-main .main-slideshow .slideshow-body .item-next:hover,
+.content-main .main-slideshow .slideshow-body .item-prev:hover {
+  background-color: #a3865b
+}
+
+.content-main .main-slideshow .slideshow-body .item-image img {
+  display: block;
+  height: 250px;
+  width: 99%;
+}
+
+.content-main .main-slideshow .slideshow-body .item-image {
+  position: relative;
+}
+
+.content-main .main-slideshow .slideshow-body .item-image .image-content {
+  background-color: #1e282f;
+  opacity: 0.9;
+  font-size: 17px;
+  position: absolute;
+  bottom: 0px;
+  width: 99%;
+  padding: 5px 0px;
+}
+
+.content-main .main-slideshow .slideshow-body .item-image .image-content:hover {
+  background-color: #a3865b;
+}
+
+.content-main .main-slideshow .slideshow-body .item-image .image-content a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.content-main .main-slideshow .slideshow-body .item-image .image-content a .content-body div {
+  padding-left: 5px;
+}
+
+.content-main .main-slideshow .slideshow-body .item-image .image-content a .content-logo {
+  float: right;
+  display: inline-block;
+  margin: 10px 5px 0px 0px;
+}
+
+.content-main .main-manga {
+  width: 100%;
+  float: left;
+  display: block;
+}
+
+.content-main .main-manga .manga-breadcrumbs {
+  display: block;
+  margin-top: 10px;
+}
+
+.content-main .main-manga .manga-breadcrumbs ul.breadcrumbs-item {
+  list-style: none;
+  margin: 0px 0px 0px 0px;
+  padding: 7px 5px 5px 5px;
+}
+
+.content-main .main-manga .manga-breadcrumbs ul.breadcrumbs-item>li:first-child {
+  margin-left: 5px;
+}
+
+.content-main .main-manga .manga-breadcrumbs ul.breadcrumbs-item li {
+  display: inline;
+  font-size: 17px;
+}
+
+.content-main .main-manga .manga-breadcrumbs ul.breadcrumbs-item li+li::before {
+  color: #ffffff;
+  content: "\00BB ";
+}
+
+.content-main .main-manga .manga-breadcrumbs ul.breadcrumbs-item li a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.content-main .main-manga .manga-breadcrumbs ul.breadcrumbs-item li a:hover {
+  color: #a3865b;
+}
+
+
+.content-main .main-manga .manga-content {
+  color: #1e282f;
+}
+.content-main .main-manga .manga-content .content-select {
+  display: inline-block;
+  width: 100%;
+  margin: 9px 0px 0px 0px;
+}
+
+.content-main .main-manga .manga-content .content-select [class^="select-"] {
+  float:left;
+}
+
+.content-main .main-manga .manga-content .content-select .select-chapter {
+  width:50%;
+}
+.content-main .main-manga .manga-content .content-select .select-next {
+  width:25%;
+}
+.content-main .main-manga .manga-content .content-select .select-prev {
+  width:25%;
+}
+.content-main .main-manga .manga-content .content-select .select-next .next-item::after {
+  content: "next chapter"
+}
+.content-main .main-manga .manga-content .content-select .select-prev .prev-item::after {
+  content: "prev chapter"
+}
+
+.content-main .main-manga .manga-content .content-select .select-next .next-item, .content-main .main-manga .manga-content .content-select .select-prev .prev-item, .content-main .main-manga .manga-content .content-select .select-chapter .chapter-item{
+  color: #1e282f;
+  border: none;
+  text-align: center;
+  margin: 5px 0px;
+  padding: 5px 0px;
+  width:100%;
+  background-color: #a3865b;
+}
+
+.main-manga .manga-content .content-select .select-chapter .chapter-item{
+  float: left;
+}
+ 
+.content-main .main-manga .manga-content .content-select .select-next .next-item, .content-main .main-manga .manga-content .content-select .select-prev .prev-item{
+  float: right;
+  margin: 5px 0px;
+  padding: 5px 0px;
+  width:90%;
+}
+
+.content-main .main-manga .manga-content .content-select .select-next .next-item:hover, .content-main .main-manga .manga-content .content-select .select-prev .prev-item:hover{
+  background-color: #62a5a1;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.content-main .main-manga .manga-content .content-image img {
+  width: 100%;
+}
+
+.content-main .main-manga .manga-content .content-item{
+  display:inline-block;
+  width: 100%;
+  background-color: #ffffff;
+}
+
+.content-main .main-manga .manga-content .content-item .item-left{
+  float:left;
+  width: 40%;
+  display:inline-block;
+  text-align: center;
+  position:relative;
+}
+
+.content-main .main-manga .manga-content .content-item .item-left .left-bookmark{
+  position: absolute;
+  top: 16px;
+  left: 37px;
+  width: 100px;
+  background: #1e282f;
+  opacity: 0.5;
+  padding: 2px 1px 3px 4px;
+  text-align: left;
+}
+.content-main .main-manga .manga-content .content-item .item-left .left-bookmark::after {
+  content:"Bookmark";
+  color:#ffffff;
+}
+.content-main .main-manga .manga-content .content-item .item-left .left-bookmark:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+.content-main .main-manga .manga-content .content-item .item-left .left-bookmark:hover:after {
+  color:#a3865b;
+}
+.content-main .main-manga .manga-content .content-item .item-left .left-bookmark:hover .icons-bookmark::before {
+  color:#a3865b;
+}
+.content-main .main-manga .manga-content .content-item .item-right {
+  display:inline-block;
+  float:left;
+  width: 60%;
+}
+.content-main .main-manga .manga-content .content-item .item-right .right-item{
+  display: inline-block;
+  width: 100%;
+  padding: 14px 0px 0px 0px;
+}
+.content-main .main-manga .manga-content .content-item .item-right .right-item [class^="item-"]{
+  float: left;
+  padding: 0px 0px 0px 15px;
+  display: inline-block;
+  width: 80%;
+}
+.content-main .main-manga .manga-content .content-item .item-right .right-item span{
+  float:left;
+}
+
+.content-main .main-manga .manga-content .content-item .item-right .right-item .item-title{
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.content-main .main-manga .manga-content .content-item .item-right .right-item .item-alternative{
+  padding: 0px 0px 0px 36px;
+}
+.content-main .main-manga .manga-content .content-item .item-right .right-item .item-alternative::before{
+  content: "Alternative : ";
+  font-weight: bold;
+}
+.content-main .main-manga .manga-content .content-item .item-right .right-item .item-author::before{
+  content: "Author(s) : ";
+  font-weight: bold;
+}
+.content-main .main-manga .manga-content .content-item .item-right .right-item .item-status::before{
+  content: "Status : ";
+  font-weight: bold;
+}
+.content-main .main-manga .manga-content .content-item .item-right .right-item .item-updated::before{
+  content: "Last updated : ";
+  font-weight: bold;
+}
+.content-main .main-manga .manga-content .content-item .item-right .right-item .item-view::before{
+  content: "View : ";
+  font-weight: bold;
+}
+.content-main .main-manga .manga-content .content-item .item-right .right-item .item-genres::before{
+  content: "Genres : ";
+  font-weight: bold;
+}
+.content-main .main-manga .manga-content .content-item .item-left img{
+  width: 80%;
+  padding: 2px;
+  margin: 10px 10px 10px 10px;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+.content-main .main-manga .manga-content .content-item .item-left img:hover {
+  border: 1px solid #a3865b;
+  cursor: not-allowed;
+}
+
+.content-main .main-manga .manga-content .content-item .item-right{
+  display:inline-block; 
+}
+.content-main .main-manga .manga-content .content-summary {
+  background-color: #ffffff;
+}
+.content-main .main-manga .manga-content .content-summary .summary-header {
+  color: #ff02bd;
+}
+.content-main .main-manga .manga-content .content-summary .summary-header::after {
+  content:"summary:"
+}
+
+.content-main .main-manga .manga-content .content-chapter {
+  background-color: #ffffff;
+  margin-top: 10px;
+}
+
+.content-main .main-manga .manga-content .content-chapter .chapter-header{
+  display:inline-block;
+  width: 100%;
+}
+
+.content-main .main-manga .manga-content .content-chapter .chapter-header [class^='header-']{
+  color: #ff02bd;
+  font-weight: bold;
+  display:inline-block;
+  float: left;
+}
+.content-main .main-manga .manga-content .content-chapter .chapter-header .header-title,.content-main .main-manga .manga-content .content-chapter .chapter-body .body-title  {
+  width: 60%;
+}
+.content-main .main-manga .manga-content .content-chapter .chapter-header .header-view,.content-main .main-manga .manga-content .content-chapter .chapter-body .body-view {
+  width: 20%;
+}
+.content-main .main-manga .manga-content .content-chapter .chapter-header .header-update,.content-main .main-manga .manga-content .content-chapter .chapter-body .body-update {
+  width: 20%;
+}
+.content-main .main-manga .manga-content .content-chapter .chapter-body{
+  display:inline-block;
+  width: 100%;
+}
+
+.content-main .main-manga .manga-content .content-chapter .chapter-body [class^='body-']{
+  display:inline-block;
+  float: left;
+}
+
+.content-main .main-manga .manga-header {
+  margin-top: 10px;
+}
+
+.content-main .main-manga .manga-header .header-title {
+  display: inline-block;
+  padding: 3px 5px 5px 10px;
+}
+
+.content-main .main-manga .manga-item {
+  width: 100%;
+  float: left;
+  background-color: #ffffff;
+  color: #1e282f;
+  padding: 0px 0px 0px 0px;
+  margin: 0px 0px 5px 0px;
+}
+
+.content-main .main-manga .manga-item:hover {
+  background-color: #b6b6b6;
+}
+
+.content-main .main-manga .manga-item a img {
+  float: left;
+  height: 86px;
+  width: 66px;
+  box-shadow: 0 0 1px rgba(34, 25, 25, 0.4);
+  padding: 2px;
+  margin: 4px;
+  border: 1px solid #b6b6b6;
+}
+.content-main .main-manga .manga-item a img.list {
+  height: 180px !important;
+  width: 135px !important;
+}
+
+.content-main .main-manga .manga-item ul {
+  list-style-type: none;
+  white-space: nowrap;
+  overflow: hidden;
+  margin: auto;
+  padding: 10px 0px 10px 5px;
+}
+
+.content-main .main-manga .manga-item ul li {
+  padding: 0px 0px 0px 0px;
+}
+.content-main .main-manga .manga-item ul .item-content {
+  white-space: normal;
+  line-height: 1.5em;
+  height: 7.5em;
+  overflow: hidden;
+  padding-right: 10px;
+}
+
+.content-main .main-manga .manga-item ul li a {
+  margin-bottom: -4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-decoration: none;
+  display: inline-block;
+  width: 50%;
+  font-size: 15px
+}
+
+.content-main .main-manga .manga-item ul li a:hover {
+  text-decoration: underline;
+}
+
+.content-main .main-manga .manga-item ul li div a {
+  color: #62a5a1;
+  font-weight: bold;
+}
+
+.content-main .main-manga .manga-item ul li span a {
+  color: #1e282f;
+}
+
+.content-main .main-manga .manga-item ul li i {
+  padding-left: 30px;
+}
+
+.content-main .main-manga .manga-item ul li span:before {
+  content: "\0BB \020";
+}
+.content-main .main-manga .manga-item ul li span.list:before {
+  content: ""!important;
+}
+
+.content-main .main-manga .manga-item ul>li:first:before {
+  content: "";
+}
+
+.content-main .main-manga .manga-pagging {
+  display:inline-block;
+  width:100%;
+  font-size: 15px;
+  padding: 0px 0px 0px 0px;
+}
+
+.content-main .main-manga .manga-pagging .pagging-total {
+  margin-top:5px;
+  display:inline-block;
+  padding: 5px 15px 5px 10px;
+  border: 3px solid #62a5a1;
+}
+
+.content-main .main-manga .manga-pagging .pagging-total::before{
+  content: "total:"
+}
+.content-main .main-manga .manga-pagging .pagging-total::after{
+  content: "stories"
+}
+
+.content-main .main-manga .manga-pagging .pagging-item {
+  margin-top:5px;
+  float:right;
+}
+
+.content-main .main-manga .manga-pagging .pagging-item [class^='item-'] {
+  display:inline-block;
+  padding:5px 15px 5px 15px;
+  border: 3px solid #62a5a1;
+}
+.content-main .main-manga .manga-pagging .pagging-item [class^='item-']:hover {
+  border: 3px solid #a3865b;
+  cursor: pointer;
+}
+
+.content-main .main-manga .manga-pagging .pagging-item .item-first::before {
+  content:"first("
+}
+.content-main .main-manga .manga-pagging .pagging-item .item-first::after {
+  content:")"
+}
+.content-main .main-manga .manga-pagging .pagging-item .item-last::before {
+  content:"last("
+}
+.content-main .main-manga .manga-pagging .pagging-item .item-last::after {
+  content:")"
+}
+
+.content-main .main-manga .manga-footer {
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  padding: 5px 0px 7px 2px;
+}
+
+.content-main .main-manga {
+  width: 100%;
+  display: inline-block;
+}
+
+.content-main .main-manga .manga-footer:hover {
+  background-color: #a3865b;
+  cursor: pointer;
+}
+
+.content-main .main-home-popular {
+  width: 100%;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.content-main .main-home-popular .home-header {}
+
+.content-main .main-home-popular .home-header .header-title {
+  padding: 3px 5px 3px 10px;
+  display: inline-block;
+}
+
+.content-main .main-home-popular .home-content .content-item {
+  padding: 5px 0px 8px 5px;
+}
+
+.content-main .main-home-popular .home-content .content-item a {
+  margin: 0px 0px -4px 0px;
+}
+
+.content-main .main-home-popular .home-content .content-item a:hover {
+  margin: 0px 0px -4px 20px;
+  text-shadow: 0 0 5px #ff6;
+}
+
+.content-main .main-home-genres {
+  width: 100%;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.content-main .main-home-genres .home-header {
+  padding: 0px;
+}
+
+.content-main .main-home-genres .home-header .header-title {
+  display: inline-block;
+  padding: 5px 10px 5px 10px;
+}
+
+.content-main .main-home-genres .home-content {
+  color:#1e282f;
+  background:#ffffff;
+  font-size:15px;
+}
+
+.content-main .main-home-genres .home-content .content-item-group {
+  display: block;
+  width: 100%;
+}
+.content-main .main-home-genres .home-content .content-item-group.list .item{
+  width: 13% !important;
+}
+
+.content-main .main-home-genres .home-content .content-item-group .item {
+  display: inline-block;
+  width: 29%;
+  padding: 5px 0px 5px 10px;
+}
+
+.content-main .main-home-genres .home-content .content-item-group .item:hover {
+  color:#a3865b;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.content-main .main-footer {
+  display:inline-block;
+  color:#1e282f;
+  background:#ffffff;
+  font-size:15px;
+  padding: 10px 10px 0px 10px;
+  margin-top: 10px;
+}
+.content-main .main-footer .footer-header{
+ font-weight: bold;
+}
+.other-content {
+  display: block;
+}
+
+#item-detail-info {
+  display: none;
+}
+#item-detail-info.item-detail {
+  top: 0;
+  -webkit-box-shadow: 0 7px 4px #777;
+  -moz-box-shadow: 0 7px 4px #777;
+  box-shadow: 0 7px 4px #777;
+  border: 1px solid #a3865b;
+  width: 400px;
+  color: #1e282f;
+  background-color: #ffffff;
+  padding: 10px;
+  padding-top: 10px;
+  position: absolute;
+}
+
+#item-detail-info.item-detail .detail-title {
+  font-size: 17px;
+  font-weight: bold;
+  padding-bottom: 5px;
+  display: inherit;
+}
+
+#item-detail-info.item-detail .detail-content .content-info {
+  font-size: 17px;
+  display: inline-block;
+  width: 100%;
+}
+
+#item-detail-info.item-detail .detail-content .content-info img {
+  padding: 3px;
+  height: 120px;
+  border: 1px solid #b6b6b6;
+  float: left;
+}
+
+#item-detail-info.item-detail .detail-content .content-info .info-body {
+  float: left;
+  width: 300px;
+}
+
+#item-detail-info.item-detail .detail-content .content-info .info-body p {
+  margin: 5px 0px 0px 5px;
+  font-size: 15px;
+  display: block;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inherit;
+}
+
+#item-detail-info.item-detail .detail-content .content-info .info-body p::before {
+  color: #62a5a1;
+  font-weight: bold;
+}
+
+#item-detail-info.item-detail .detail-content .content-info .info-body .body-alternative::before {
+  content: "Alternative: ";
+}
+
+#item-detail-info.item-detail .detail-content .content-info .info-body .body-author::before {
+  content: "Author(s): ";
+}
+
+#item-detail-info.item-detail .detail-content .content-info .info-body .body-update::before {
+  content: "Update: ";
+}
+
+#item-detail-info.item-detail .detail-content .content-info .info-body .body-view::before {
+  content: "View: ";
+}
+
+#item-detail-info.item-detail .detail-content .content-info .info-body .body-genres::before {
+  content: "Genres: ";
+}
+
+#item-detail-info.item-detail .detail-content .content-summary {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 3px solid #62a5a1;
+  width: 100%;
+}
+
+#item-detail-info.item-detail .detail-content .content-summary::before {
+  content: "Summary: ";
+  color: #62a5a1;
+  font-weight: bold;
+}
+#bottom-up {
+  display:block;
+  position:fixed;
+  bottom: 20px;
+  right:30px;
+  z-index: 99;
+  background:#1e282f;
+  opacity: 0.5;
+  cursor:pointer;
+  padding:15px;
+  transform: rotate(270deg);
+}
+#bottom-up:hover {
+  opacity: 1;
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+.action-hover {
+  transition: all .3s;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -o-transition: all .3s;
+}
+
+.boder-top {
+  border-top: 3px solid #a3865b;
+}
+
+.boder-top-dashed {
+  border-top: 3px dashed #a3865b;
+}
+
+.boder-bottom {
+  border-bottom: 3px solid #a3865b;
+}
+
+
+.main-header {
+  background-color: #62a5a1;
+  color: #ffffff;
+  font-size: 17px;
+  text-decoration: none;
+}
+.main-header-small {
+  background-color: #62a5a1;
+  color: #ffffff;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.main-content {
+  color: #1e282f;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.main-content-header {
+  color: #ffffff;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.content-padding {
+  padding: 10px 0px 0px 10px;
+}
+
+.upper-text {
+  text-transform: uppercase;
+}
+
+.over-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 80%;
+  display: inline-block;
+}
+
+[class^="icon-"]:hover {
+  border-color: #a3865b;
+}
+[class^="icon-"]:hover:before {
+  color: #a3865b;
+}
+
+.icon-arrow::before {
+  content: "\2192";
+  padding: 0px 2px 3px 4px;
+  color: white;
+}
+
+.icon-arrow-auto::before {
+  content: "\2192";
+  padding: 0px 2px 3px 4px;
+  color: #ffffff;
+}
+
+.icons-arrow-top::before {
+  content: "\27A4";
+  color: #ffffff;
+}
+
+.icon-thum-up::before {
+  content: "\1f44d";
+  padding: 1px 3px 0px 0px;
+  color: white;
+}
+
+.icon-search::before {
+  content: "\1f50d";
+  color: white;
+}
+
+.icon-popular::before {
+  content: "\1f31f";
+  color: white;
+  padding: 1px 1px 0px 2px;
+}
+
+.icons-light::before {
+  content: "\1f319";
+  color: white;
+  padding: 1px 3px 0px 0px;
+}
+
+.icons-light:hover {
+ border-color:yellow;
+}
+
+.icons-light:hover::before {
+  color: yellow;
+}
+
+.icon-bookmark::before {
+  content: "\1f516";
+  color: white;
+  padding: 1px 2px 0px 2px;
+}
+
+.icons-bookmark::before {
+  content: "\1f516";
+  color: #ffffff;
+  border-radius: 2%;
+  -webkit-border-radius: 2%;
+  -moz-border-radius: 2%;
+  padding: 1px 2px 0px 2px;
+}
+
+.icon-history::before {
+  content: "\1f4dc";
+  color: white;
+ padding: 1px 2px 0px 2px;
+}
+
+.icon-logout::before {
+  content: "\1f6aa";
+  color: white;
+  padding: 1px 6px 1px 6px;
+}
+
+.icon-login::before {
+  content: "\1f511";
+  color: white;
+  padding: 1px 2px 0px 2px;
+}
+
+.icon-register::before {
+  content: "\1f4dd";
+  color: white;
+padding: 1px 2px 0px 2px;
+}
+.icon-view::before {
+  content: "\1f3a5";
+  color: #1e282f;
+  padding: 0px 3px 0px 2px;
+}
+
+.icon-tags::before {
+  content: "\1f525";
+  color: white;
+  padding: 1px 2px 0px 2px;
+}
+
+.bg-orage {
+  background-color: #ff530d;
+}
+.icons-title::before {
+  content: "\270D";
+  color: white;
+  padding: 0px 5px 2px 5px;
+}
+.icons-author::before {
+  content: "\1f468";
+  color: white;
+  padding: 0px 3px 0px 2px;
+}
+.icons-status::before {
+  content: "\1f3c1";
+  color: white;
+  padding: 0px 3px 0px 2px;
+}
+.icons-updated::before {
+  content: "\023f0";
+  color: white;
+  padding: 0px 3px 0px 2px;
+}
+.icons-view::before {
+  content: "\1f3a5";
+  color: white;
+  padding: 0px 3px 0px 2px;
+}
+.icons-genres::before {
+  content: "\1f525";
+  color: white;
+  padding: 0px 3px 0px 2px;
+}
+
+.boder-top-bottom {
+  border-top: 3px solid #a3865b;
+  border-bottom: 3px solid #a3865b;
+}
+
+.content-specal {
+  color:#ff02bd!important;
+  font-weight: bold;
+}
+.content-active {
+  color:#62a5a1;
+  font-weight: bold;
+}
+
+.active {
+  background-color: #a3865b !important;
+  border: 3px solid #a3865b!important;
+}
+
+.border-circle {
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border: 1px solid white;
+}
+
+.border-rec {
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+
+.none {
+  display:none !important;
+}
+
+.bg-popular-1 {
+  background: #c0392b;
+}
+
+.bg-popular-2 {
+  background: #e84c3d;
+}
+
+.bg-popular-3 {
+  background: #e67e22;
+}
+
+.bg-popular-4 {
+  background: #f1c40f;
+}
+
+.bg-popular-5 {
+  background: #2ecc71;
+}
+
+.bg-popular-6 {
+  background: #27ae60;
+}
+
+.bg-popular-7 {
+  background: #1abc9c;
+}
+
+.bg-popular-8 {
+  background: #16a085;
+}
+
+.bg-popular-9 {
+  background: #3498db;
+}
+
+.bg-popular-10 {
+  background: #2980b9;
+}
+
+@-webkit-keyframes fade {
+  from {
+      opacity: .4
+  }
+  to {
+      opacity: 1
+  }
+}
+
+@keyframes fade {
+  from {
+      opacity: .4
+  }
+  to {
+      opacity: 1
+  }
+}
+
+@media only screen and (max-width:720px) {
+  .content-main {
+      margin: 5px 0px 0px 0px;
+      padding: 0px;
+  }
+  .nav {
+      margin: 0px;
+  }
+  .nav .nav-menu .menu-web {
+      display: none;
+  }
+  .nav .nav-menu .menu-drop {
+      display: inline-block;
+  }
+  .nav .nav-menu .menu-drop:hover .menu-drop-content {
+      display: block;
+  }
+  .nav .nav-menu .menu-drop:hover .menu-drop-button {
+      color: #a3865b;
+      cursor: pointer;
+  }
+  .content-main .main-slideshow .slideshow-body .item-image {
+    width:50%;
+  }
+  .content-main .main-slideshow .slideshow-body .item-image img {
+      display: block;
+      height: 300px;
+      width: 99%;
+  }
+  .content-main .main-manga .manga-item {
+      padding: 0px 0px 0px 0px;
+      margin: 0px 0px 5px 0px;
+  }
+  .content-main .main-manga .manga-pagging {
+    text-align: center;
+  }
+  .content-main .main-manga .manga-pagging .pagging-total {
+    display: inline-block;
+    margin:auto;
+    float:none;
+    margin-top:10px;
+  }  
+  
+  .content-main .main-manga .manga-pagging .pagging-item {
+    display: inline-block;
+    margin:auto;
+    float:none;
+  }
+  .content-main .main-manga .manga-content .content-select {
+    width:100%;
+    display: inline-block;
+  }
+  .content-main .main-manga .manga-content .content-select .select-chapter {
+    width:100%;
+  }
+  .content-main .main-manga .manga-content .content-select .select-next {
+    width:50%;
+  }
+  .content-main .main-manga .manga-content .content-select .select-prev {
+    width:50%;
+  }
+  .content-main .main-manga .manga-content .content-select .select-next .next-item {
+    float:left;
+  }
+  .content-main .main-home-genres .home-content .content-item-group.list {
+    display: inline-block;
+    width:100%;
+  }
+  .content-main .main-home-genres .home-content .content-item-group.list .item{
+    width: 30% !important;
+  }
+  .nav .nav-search #search-display input[type=text] {
+      width: 70%;
+  }
+  .nav .nav-search #search-display button {
+      width: 25%;
+  }
+}
+
+@media only screen and (min-width:900px) {
+  .content-main .main-manga .manga-item {
+      width: 50%;
+  }
+}
+
+@media only screen and (min-width:1280px) {
+  .content-main {
+      width: 1180px;
+      margin: auto;
+      padding: 0px;
+  }
+  .nav {
+      margin-top: 20px;
+      width: 1180px;
+      margin: 20px auto 10px auto;
+  }
+  .content-main .main-slideshow .slideshow-body .item-image {
+    width:20%;
+  }
+  .content-main .main-manga {
+      width: 70%;
+      float: left;
+      display: block;
+  }
+  .content-main .main-manga.list {
+    width: 100% !important;
+  }
+  .content-main .main-home-popular {
+      width: 30%;
+      float: left;
+      display: block;
+  }
+  .content-main .main-home-popular .home-header,
+  .content-main .main-home-popular .home-content {
+      margin-left: 10px;
+  }
+  .content-main .main-home-genres {
+      width: 30%;
+      float: right;
+      display: block;
+      margin-top: 10px;
+  }
+  .content-main .main-home-genres.list {
+    width: 100%!important;
+  }
+  .content-main .main-home-genres.list .home-content, .content-main .main-home-genres.list .home-header {
+    margin-left: 0px!important;
+  }
+  
+  .content-main .main-home-genres .home-header,
+  .content-main .main-home-genres .home-content {
+      margin-left: 10px;
+  }
+  .content-main .main-manga .manga-item {
+      width: 50%;
+  }
+  .nav .nav-search #search-display input[type=text] {
+      width: 89%;
+  }
+  .nav .nav-search #search-display button {
+      width: 10%;
+  }
+  .content-main .main-manga .manga-content .content-select .select-chapter {
+    width:60%;
+  }
+  .content-main .main-manga .manga-content .content-select .select-next {
+    width:20%;
+  }
+  .content-main .main-manga .manga-content .content-select .select-prev {
+    width:20%;
+  }
+}
