@@ -6,10 +6,6 @@ function detectMobile() {
   return check;
 }
 
-window.onscroll = function() {
-  // setTimeout(function(){ reveal(); }, TIME_OUT);
-}
-
 reveal = function() {
   var reveals = document.querySelectorAll(".reveal");
 
