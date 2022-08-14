@@ -1,7 +1,6 @@
-# landpage
+# dapp
 
-* Landpage of project *
-html, css, js, 
+
 
 ## Getting started
 
@@ -16,14 +15,14 @@ Already a pro? Just edit this README.md and make it your own. Want to make it ea
 
 ```
 cd existing_repo
-git remote add origin https://gitlab.com/grabway/landpage.git
+git remote add origin https://gitlab.com/r3380/dapp.git
 git branch -M main
 git push -uf origin main
 ```
 
 ## Integrate with your tools
 
-- [ ] [Set up project integrations](https://gitlab.com/grabway/landpage/-/settings/integrations)
+- [ ] [Set up project integrations](https://gitlab.com/r3380/dapp/-/settings/integrations)
 
 ## Collaborate with your team
 
