@@ -9,7 +9,7 @@
     />
     <link
       rel="icon"
-      href="asset/img/faviconced1.png?v1.7"
+      href="asset/img/logo.png?v1.7"
       type="image/x-icon"
     />
     <title></title>
@@ -19,6 +19,7 @@
     />
     <link href="asset/css/iziToast.minced1.css?v1.7" rel="stylesheet" />
     <link href="asset/css/stylemeced1.css?v1.7" rel="stylesheet" />
+    <link href="asset/css/style.css?v1.7" rel="stylesheet" />
   </head>
 
   <body>
@@ -28,8 +29,8 @@
           <a
             class="navbar-brand"
             style="padding: 0px 0px"
-            href="https://gatesofheaven.finance/"
-            ><img src="asset/img/goh-500X200.png" style="height: 50px"
+            href="https://wemov.io/"
+            ><img src="asset/img/logo.png" style="height: 50px"
           /></a>
           <button
             class="btn btn-connect connect"
@@ -38,9 +39,11 @@
           >
             <i class="fa fa-power-off fa-fw"></i>
           </button>
-          <button class="btn btn-connect connect" id="btn-login">
-            Connect
-          </button>
+          
+            <button class="btn btn-connect connect" id="btn-login">
+              Connect
+            </button>
+          
         </div>
       </div>
     </nav>
@@ -66,172 +69,228 @@
       <div class="container">
         <div class="row">
           <div class="col-xs-12 col-md-8">
-            <div class="col-xs-12 col-md-4">
-              <div class="box blur" style="margin-top: 30px">
-                <h1>Presale Tokens</h1>
-                <div class="row" style="min-height: 100px">
-                  <div class="col-xs-12 col-md-10">
-                    <div class="stats_acc">
-                      <span id="presaleToken">0</span>
-                    </div>
-                    <div><span class="cur">GOH</span></div>
+            <div class="row list-v">
+              <div class="col-xs-6 col-md-4">
+                <div class="box blur" style="margin-top: 30px">
+                  <div class="row">
+                    <img src="./asset/img/1.png" alt="">
                   </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xs-12 col-md-4">
-              <div class="box blur" style="margin-top: 30px">
-                <h1>Presale Price</h1>
-                <div class="row" style="min-height: 100px">
-                  <div class="col-xs-12 col-md-10">
-                    <div class="stats_acc"><span id="tokenPrice">0</span></div>
-                    <div><span class="cur">GOH = 1BNB</span></div>
+                  <div class="row">
+                    <h1>Presale Tokens</h1>
                   </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xs-12 col-md-4">
-              <div class="box blur" style="margin-top: 30px">
-                <h1>Total Whitelist</h1>
-                <div class="row" style="min-height: 100px">
-                  <div class="col-xs-12 col-md-10">
-                    <div class="stats_acc">
-                      <span id="totalWhitelists">0</span>
+                  <div class="row" style="min-height: 50px">
+                    <div class="col-xs-12 col-md-12">
+                      <div class="stats_acc">
+                        <span id="presaleToken">0</span>
+                      </div>
+                      <div><span class="cur">GOH</span></div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="col-xs-12 col-md-4">
-              <div class="box blur" style="margin-top: 30px">
-                <h1>Sold Tokens</h1>
-                <div class="row" style="min-height: 100px">
-                  <div class="col-xs-12 col-md-10">
-                    <div class="stats_acc">
-                      <span id="tokenBalance">0</span>
+              <div class="col-xs-6 col-md-4">
+                <div class="box blur" style="margin-top: 30px">
+                  <div class="row">
+                    <img src="./asset/img/2.png" alt="">
+                  </div>
+                  <div class="row">
+                    <h1>Total Contributors</h1>
+                  </div>
+                  <div class="row" style="min-height: 50px">
+                    <div class="col-xs-12 col-md-12">
+                      <div class="stats_acc"><span id="totalUsers">0</span></div>
                     </div>
-                    <div><span class="cur">GOH</span></div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="col-xs-12 col-md-4">
-              <div class="box blur" style="margin-top: 30px">
-                <h1>Presale Rate</h1>
-                <div class="row" style="min-height: 100px">
-                  <div class="col-xs-12 col-md-10">
-                    <div class="stats_acc"><span id="tokenRate">0</span></div>
-                    <div><span class="cur">USD</span></div>
+              <div class="col-xs-6 col-md-4">
+                <div class="box blur" style="margin-top: 30px">
+                  <div class="row">
+                    <img src="./asset/img/3.png" alt="">
+                  </div>
+                  <div class="row">
+                    <h1>Total Whitelist</h1>
+                  </div>
+                  <div class="row" style="min-height: 50px">
+                    <div class="col-xs-12 col-md-12">
+                      <div class="stats_acc">
+                        <span id="totalWhitelists">0</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="col-xs-12 col-md-4">
-              <div class="box blur" style="margin-top: 30px">
-                <h1>Total Contributors</h1>
-                <div class="row" style="min-height: 100px">
-                  <div class="col-xs-12 col-md-10">
-                    <div class="stats_acc"><span id="totalUsers">0</span></div>
+
+              <div class="col-xs-6 col-md-4">
+                <div class="box blur" style="margin-top: 30px">
+                  <div class="row">
+                    <img src="./asset/img/4.png" alt="">
+                  </div>
+                  <div class="row">
+                    <h1>Presale Rate</h1>
+                  </div>
+                  <div class="row" style="min-height: 50px">
+                    <div class="col-xs-12 col-md-12">
+                      <div class="stats_acc"><span id="tokenRate">0</span></div>
+                      <div><span class="cur">USD</span></div>
+                    </div>
                   </div>
                 </div>
               </div>
+
+              <div class="col-xs-6 col-md-4">
+                <div class="box blur" style="margin-top: 30px">
+                  <div class="row">
+                    <img src="./asset/img/5.png" alt="">
+                  </div>
+                  <div class="row">
+                    <h1>Presale Price</h1>
+                  </div>
+                  <div class="row" style="min-height: 50px">
+                    <div class="col-xs-12 col-md-12">
+                      <div class="stats_acc"><span id="tokenPrice">0</span></div>
+                      <div><span class="cur">GOH = 1BNB</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              
+              
+              <div class="col-xs-6 col-md-4">
+                <div class="box blur" style="margin-top: 30px">
+                  <div class="row">
+                    <img src="./asset/img/6.png" alt="">
+                  </div>
+                  <div class="row">
+                    <h1>Sold Tokens</h1>
+                  </div>
+                  <div class="row" style="min-height: 50px">
+                    <div class="col-xs-12 col-md-12">
+                      <div class="stats_acc">
+                        <span id="tokenBalance">0</span>
+                      </div>
+                      <div><span class="cur">GOH</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
             </div>
+            
           </div>
-          <div class="col-xs-12 col-md-4">
-            <div class="box blur" style="margin-top: 30px">
-              <h1 id="salestatus"></h1>
-              <div class="row" style="min-height: 40px">
-                <div class="col-xs-12 col-md-3">
-                  <div class="stats_acc">
-                    <span id="sp_times" class="total_deposit_1"></span>
+          <div class="col-xs-12 col-md-4 ">
+            <div class="row er">
+              <div class="box blur bg1" style="margin-top: 30px">
+                <div class="row">
+                  <img src="./asset/img/7.png" alt="">
+                </div>
+                <h1 id="salestatus"></h1>
+                <div class="row bg1-1" style="min-height: 40px">
+                  <div class="col-xs-12 col-md-3">
+                    <div class="stats_acc">
+                      <span id="sp_times" class="total_deposit_1"></span>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div
-              id="boxon"
-              class="box blur"
-              style="display: none; margin-top: 30px; min-height: 90px"
-            >
-              <h1>Presale</h1>
-              <div style="margin-top: 10px">
-                Min <span id="minbuyAmount"></span> BNB, Max
-                <span id="maxbuyAmount"></span> BNB
-              </div>
-              <div style="max-width: 200px">
-                <input
-                  class="form-control form-deposit"
-                  type="text"
-                  id="amountBuy"
-                  placeholder="Enter BNB Amount"
-                />
-              </div>
-              <div>
-                <button
-                  class="btn btn-connect btn-withdraw"
-                  style="
-                    margin: 5px 0px;
-                    border-top: none;
-                    border-left: none;
-                    border-bottom: none;
-                    font-size: 20px;
-                    padding: 6px 20px;
-                  "
-                  id="buttonBuy"
-                >
-                  Buy
-                </button>
-              </div>
-              <div style="margin-top: 5px; font-size: 9px">
-                - Claim available when sale ended
-              </div>
-            </div>
-            <div
-              id="boxend"
-              class="box blur"
-              style="display: none; margin-top: 30px; min-height: 90px"
-            >
-              <h1>Your Token</h1>
-              <div class="stats_acc">
-                <span id="yougoh">0.00</span> <span>GOH</span>
-              </div>
-              <div>
-                <button
-                  class="btn btn-connect btn-withdraw"
-                  style="
-                    display: none;
-                    margin: 5px 0px;
-                    border-top: none;
-                    border-left: none;
-                    border-bottom: none;
-                    font-size: 20px;
-                    padding: 6px 20px;
-                  "
-                  id="buttonWithdraw"
-                >
-                  Force Withdraw
-                </button>
-                <button
-                  class="btn btn-connect btn-withdraw"
-                  style="
-                    display: none;
-                    margin: 5px 0px;
-                    border-top: none;
-                    border-left: none;
-                    border-bottom: none;
-                    font-size: 20px;
-                    padding: 6px 20px;
-                  "
-                  id="buttonClaim"
-                >
-                  Claim
-                </button>
               </div>
               <div
-                id="buydesc"
-                style="display: none; margin-top: 5px; font-size: 9px"
+                id="boxon"
+                class="box blur"
+                style="display: none; margin-top: 30px; min-height: 90px"
               >
-                - 10% deduction for mandatory refunds
+                <h1>Presale</h1>
+                <div style="margin-top: 10px">
+                  Min <span id="minbuyAmount"></span> BNB, Max
+                  <span id="maxbuyAmount"></span> BNB
+                </div>
+                <div style="max-width: 200px">
+                  <input
+                    class="form-control form-deposit"
+                    type="text"
+                    id="amountBuy"
+                    placeholder="Enter BNB Amount"
+                  />
+                </div>
+                <div>
+                  <button
+                    class="btn btn-connect btn-withdraw"
+                    style="
+                      margin: 5px 0px;
+                      border-top: none;
+                      border-left: none;
+                      border-bottom: none;
+                      font-size: 20px;
+                      padding: 6px 20px;
+                    "
+                    id="buttonBuy"
+                  >
+                    Buy
+                  </button>
+                </div>
+                <div style="margin-top: 5px; font-size: 9px">
+                  - Claim available when sale ended
+                </div>
+              </div>
+              <div
+                id="boxend"
+                class="box blur bg2"
+                style="display: none; margin-top: 30px; min-height: 90px"
+              >
+              <div class="row">
+                <img src="./asset/img/10.png" alt="">
+              </div>
+                <h1>Your Token</h1>
+                <div class="pt-2"></div>
+                <div class="stats_acc col-sm-6">
+                  <span id="yougoh">0.00</span> <span class="smgoh">GOH</span>
+                </div>
+                <div class="col-sm-6 p0">
+                  <button
+                    class="btn btn-connect btn-withdraw fr"
+                    style="
+                      display: none;
+                      margin: 5px 0px;
+                      border-top: none;
+                      border-left: none;
+                      border-bottom: none;
+                      font-size: 20px;
+                      padding: 6px 20px;
+                    "
+                    id="buttonWithdraw"
+                  >
+                    Force Withdraw
+                  </button>
+                  <button
+                    class="btn btn-connect btn-withdraw fr"
+                    style="
+                      display: none;
+                      margin: 5px 0px;
+                      border-top: none;
+                      border-left: none;
+                      border-bottom: none;
+                      font-size: 20px;
+                      padding: 6px 20px;
+                    "
+                    id="buttonClaim"
+                  >
+                    Claim
+                  </button>
+                </div>
+                <div
+                  id="buydesc"
+                  style="display: none; margin-top: 5px; font-size: 9px"
+                >
+                  - 10% deduction for mandatory refunds
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-12 text-center">
+                  <div class="pt-2"></div>
+                  <br>
+                  <a href="" class="btn-contract">Contract</a>
+                  <br>
+                </div>
               </div>
             </div>
           </div>
@@ -239,8 +298,22 @@
       </div>
     </div>
 
-    <div class="footer" style="padding: 60px 0px">
-      <div class="container">
+    <div class="footer" style="">
+      
+      
+      <div class="container-flux bg-footer-mb visible-xs visible-sm">
+        <img src="./asset/img/13.png" alt="" class="img-responsive">
+        <div class="text-center mb-text">
+          Powered by ©2022  Wemov
+        </div>
+      </div>
+      <div class="container-flux bg-footer hidden-xs hidden-sm">
+        <img src="./asset/img/12.png" alt="" class="img-responsive">
+      </div>
+      <div class="container-flux bg-footer powered hidden-xs hidden-sm">
+        Powered by ©2022  Wemov
+      </div>
+      <div class="container d-none">
         <div class="row">
           <div class="col-xs-12 col-md-12">
             <div
@@ -253,7 +326,7 @@
               "
             >
               Powered by &copy;2022
-              <span style="color: #ffff">Gates Of Heaven</span>
+              <span style="color: #ffff"> Wemov</span>
             </div>
           </div>
         </div>
