@@ -1,0 +1,36 @@
+var _path;
+
+var _excluded = ["title", "titleId"];
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+import * as React from "react";
+
+function SvgBetIcon(_ref, svgRef) {
+  var title = _ref.title,
+      titleId = _ref.titleId,
+      props = _objectWithoutProperties(_ref, _excluded);
+
+  return /*#__PURE__*/React.createElement("svg", _extends({
+    width: 16,
+    height: 16,
+    viewBox: "0 0 16 16",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg",
+    ref: svgRef,
+    "aria-labelledby": titleId
+  }, props), title ? /*#__PURE__*/React.createElement("title", {
+    id: titleId
+  }, title) : null, _path || (_path = /*#__PURE__*/React.createElement("path", {
+    d: "M13.6571 2.34316C12.1461 0.832156 10.1371 0 8.00027 0C5.8634 0 3.85443 0.832156 2.3434 2.34316C0.8324 3.85416 0.000274658 5.86313 0.000274658 8C0.000274658 10.1369 0.8324 12.1459 2.3434 13.6569C3.8544 15.1678 5.8634 16 8.00027 16C10.1371 16 12.1461 15.1678 13.6571 13.6569C15.1681 12.1459 16.0003 10.1369 16.0003 8C16.0003 5.86313 15.1681 3.85416 13.6571 2.34316ZM8.46902 2.71591L10.3587 1.34294C11.772 1.84516 12.9794 2.78522 13.8171 3.99934L13.133 6.10453L10.7223 6.88784L8.46902 5.25084V2.71591ZM5.64181 1.34297L7.53152 2.71591V5.25091L5.27856 6.88769L2.86768 6.10437L2.18359 3.99922C3.02124 2.78516 4.22859 1.84516 5.64181 1.34297ZM2.54371 12.4789C1.57743 11.3038 0.982493 9.81244 0.940243 8.18584L2.57799 6.99597L4.98871 7.77925L5.84937 10.4282L4.35943 12.4789H2.54371ZM10.3535 14.6589C9.61702 14.9199 8.82506 15.0625 8.00027 15.0625C7.17552 15.0625 6.38356 14.9199 5.64715 14.6589L5.11784 13.0299L6.60774 10.9792L9.39284 10.9791L10.8828 13.0298L10.3535 14.6589ZM13.4569 12.4788H11.6412L10.1513 10.4281L11.0119 7.77947L13.4227 6.99616L15.0603 8.18597C15.0181 9.81247 14.4231 11.3038 13.4569 12.4788Z",
+    fill: "#767784"
+  })));
+}
+
+var ForwardRef = /*#__PURE__*/React.forwardRef(SvgBetIcon);
+export default __webpack_public_path__ + "static/media/bet-icon.cc484d6d44e52c9c4befde5e0aef459b.svg";
+export { ForwardRef as ReactComponent };

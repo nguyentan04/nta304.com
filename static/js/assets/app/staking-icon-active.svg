@@ -1,0 +1,36 @@
+var _path;
+
+var _excluded = ["title", "titleId"];
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+import * as React from "react";
+
+function SvgStakingIconActive(_ref, svgRef) {
+  var title = _ref.title,
+      titleId = _ref.titleId,
+      props = _objectWithoutProperties(_ref, _excluded);
+
+  return /*#__PURE__*/React.createElement("svg", _extends({
+    width: 16,
+    height: 16,
+    viewBox: "0 0 16 16",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg",
+    ref: svgRef,
+    "aria-labelledby": titleId
+  }, props), title ? /*#__PURE__*/React.createElement("title", {
+    id: titleId
+  }, title) : null, _path || (_path = /*#__PURE__*/React.createElement("path", {
+    d: "M8.00027 0.666687C6.54987 0.666687 5.13205 1.09678 3.92609 1.90258C2.72013 2.70837 1.78019 3.85368 1.22515 5.19368C0.670109 6.53367 0.524884 8.00816 0.807842 9.43068C1.0908 10.8532 1.78923 12.1599 2.81482 13.1855C3.8404 14.2111 5.14708 14.9095 6.56961 15.1924C7.99213 15.4754 9.46662 15.3302 10.8066 14.7751C12.1466 14.2201 13.2919 13.2802 14.0977 12.0742C14.9035 10.8682 15.3336 9.45042 15.3336 8.00002C15.3324 6.05548 14.5594 4.19094 13.1844 2.81594C11.8094 1.44094 9.94481 0.667923 8.00027 0.666687V0.666687ZM8.66694 11.3334V12C8.66694 12.1768 8.5967 12.3464 8.47167 12.4714C8.34665 12.5964 8.17708 12.6667 8.00027 12.6667C7.82346 12.6667 7.65389 12.5964 7.52886 12.4714C7.40384 12.3464 7.3336 12.1768 7.3336 12V11.3334H6.66694C6.49012 11.3334 6.32055 11.2631 6.19553 11.1381C6.07051 11.0131 6.00027 10.8435 6.00027 10.6667C6.00027 10.4899 6.07051 10.3203 6.19553 10.1953C6.32055 10.0703 6.49012 10 6.66694 10H8.66694C8.84375 10 9.01332 9.92978 9.13834 9.80476C9.26336 9.67973 9.3336 9.51016 9.3336 9.33335C9.3336 9.15654 9.26336 8.98697 9.13834 8.86195C9.01332 8.73693 8.84375 8.66669 8.66694 8.66669H7.3336C6.80317 8.66669 6.29446 8.45597 5.91939 8.0809C5.54432 7.70583 5.3336 7.19712 5.3336 6.66669C5.3336 6.13625 5.54432 5.62755 5.91939 5.25247C6.29446 4.8774 6.80317 4.66669 7.3336 4.66669V4.00002C7.3336 3.82321 7.40384 3.65364 7.52886 3.52862C7.65389 3.40359 7.82346 3.33335 8.00027 3.33335C8.17708 3.33335 8.34665 3.40359 8.47167 3.52862C8.5967 3.65364 8.66694 3.82321 8.66694 4.00002V4.66669H9.3336C9.51041 4.66669 9.67998 4.73693 9.80501 4.86195C9.93003 4.98697 10.0003 5.15654 10.0003 5.33335C10.0003 5.51016 9.93003 5.67973 9.80501 5.80476C9.67998 5.92978 9.51041 6.00002 9.3336 6.00002H7.3336C7.15679 6.00002 6.98722 6.07026 6.8622 6.19528C6.73717 6.32031 6.66694 6.48988 6.66694 6.66669C6.66694 6.8435 6.73717 7.01307 6.8622 7.13809C6.98722 7.26312 7.15679 7.33335 7.3336 7.33335H8.66694C9.19737 7.33335 9.70608 7.54407 10.0811 7.91914C10.4562 8.29421 10.6669 8.80292 10.6669 9.33335C10.6669 9.86379 10.4562 10.3725 10.0811 10.7476C9.70608 11.1226 9.19737 11.3334 8.66694 11.3334V11.3334Z",
+    fill: "white"
+  })));
+}
+
+var ForwardRef = /*#__PURE__*/React.forwardRef(SvgStakingIconActive);
+export default __webpack_public_path__ + "static/media/staking-icon-active.109971539c3025b5932d6aa0abdf82f1.svg";
+export { ForwardRef as ReactComponent };

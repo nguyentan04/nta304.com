@@ -1,0 +1,48 @@
+var _g, _defs;
+
+var _excluded = ["title", "titleId"];
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+import * as React from "react";
+
+function SvgLaunchpadIcon(_ref, svgRef) {
+  var title = _ref.title,
+      titleId = _ref.titleId,
+      props = _objectWithoutProperties(_ref, _excluded);
+
+  return /*#__PURE__*/React.createElement("svg", _extends({
+    width: 16,
+    height: 16,
+    viewBox: "0 0 16 16",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg",
+    ref: svgRef,
+    "aria-labelledby": titleId
+  }, props), title ? /*#__PURE__*/React.createElement("title", {
+    id: titleId
+  }, title) : null, _g || (_g = /*#__PURE__*/React.createElement("g", {
+    clipPath: "url(#clip0_919_5)"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M15.6723 0.00200678C12.5489 -0.0539932 8.98695 1.57867 6.73228 4.11134C4.57761 4.15201 2.47961 5.03534 0.934948 6.58001C0.844948 6.66867 0.812948 6.80134 0.852281 6.92134C0.892281 7.04201 0.996281 7.12934 1.12161 7.14734L3.69095 7.51534L3.37361 7.87067C3.25561 8.00267 3.26161 8.20334 3.38695 8.32867L7.67161 12.6133C7.73628 12.678 7.82161 12.7107 7.90761 12.7107C7.98695 12.7107 8.06628 12.6827 8.12961 12.626L8.48495 12.3087L8.85295 14.878C8.87095 15.0033 8.96961 15.0953 9.08895 15.1353C9.11961 15.1453 9.15161 15.15 9.18428 15.15C9.27895 15.15 9.37561 15.1087 9.44228 15.0427C10.9656 13.5193 11.8489 11.4213 11.8896 9.26667C14.4249 7.00734 16.0709 3.44667 15.9983 0.32734C15.9936 0.150007 15.8503 0.00667345 15.6723 0.00200678V0.00200678ZM12.6003 5.75667C12.2756 6.08134 11.8489 6.24401 11.4216 6.24401C10.9943 6.24401 10.5676 6.08134 10.2429 5.75667C9.59361 5.10667 9.59361 4.04934 10.2429 3.39934C10.8929 2.74934 11.9503 2.74934 12.6003 3.39934C13.2503 4.04934 13.2503 5.10734 12.6003 5.75667Z",
+    fill: "#767784"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M1.81628 11.27C1.10295 11.9833 0.123616 15.206 0.0142824 15.5706C-0.0210509 15.688 0.0116157 15.8153 0.0976157 15.902C0.161616 15.966 0.246282 16 0.333616 16C0.365616 16 0.397616 15.9953 0.429616 15.986C0.794282 15.8766 4.01695 14.8973 4.73028 14.184C5.53362 13.3806 5.53362 12.0733 4.73028 11.27C3.92628 10.4666 2.61962 10.4673 1.81628 11.27V11.27Z",
+    fill: "#767784"
+  }))), _defs || (_defs = /*#__PURE__*/React.createElement("defs", null, /*#__PURE__*/React.createElement("clipPath", {
+    id: "clip0_919_5"
+  }, /*#__PURE__*/React.createElement("rect", {
+    width: 16,
+    height: 16,
+    fill: "white",
+    transform: "translate(0.000274658)"
+  })))));
+}
+
+var ForwardRef = /*#__PURE__*/React.forwardRef(SvgLaunchpadIcon);
+export default __webpack_public_path__ + "static/media/launchpad-icon.a87b9abb666da1c3eb34a49de0aa075e.svg";
+export { ForwardRef as ReactComponent };

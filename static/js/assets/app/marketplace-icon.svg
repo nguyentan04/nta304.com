@@ -1,0 +1,42 @@
+var _path, _path2, _path3;
+
+var _excluded = ["title", "titleId"];
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+import * as React from "react";
+
+function SvgMarketplaceIcon(_ref, svgRef) {
+  var title = _ref.title,
+      titleId = _ref.titleId,
+      props = _objectWithoutProperties(_ref, _excluded);
+
+  return /*#__PURE__*/React.createElement("svg", _extends({
+    width: 16,
+    height: 17,
+    viewBox: "0 0 16 17",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg",
+    ref: svgRef,
+    "aria-labelledby": titleId
+  }, props), title ? /*#__PURE__*/React.createElement("title", {
+    id: titleId
+  }, title) : null, _path || (_path = /*#__PURE__*/React.createElement("path", {
+    d: "M7.3874 14.0461C7.18567 14.6958 6.68739 15.2101 6.05786 15.4183C6.68739 15.6265 7.18567 16.1408 7.3874 16.7906C7.58913 16.1408 8.08722 15.6265 8.71675 15.4183C8.08722 15.2101 7.58913 14.696 7.3874 14.0461Z",
+    fill: "white"
+  })), _path2 || (_path2 = /*#__PURE__*/React.createElement("path", {
+    d: "M11.0137 0C10.5588 2.61243 8.55811 4.67762 6.02734 5.14729C8.55811 5.61676 10.5588 7.68215 11.0137 10.2944C11.4686 7.68195 13.4693 5.61676 16.0001 5.14729C13.4693 4.67762 11.4686 2.61243 11.0137 0Z",
+    fill: "white"
+  })), _path3 || (_path3 = /*#__PURE__*/React.createElement("path", {
+    d: "M2.62637 7.12463C2.31618 8.4611 1.29488 9.5154 0 9.83554C1.29488 10.1557 2.31638 11.21 2.62637 12.5465C2.93656 11.21 3.95786 10.1557 5.25274 9.83554C3.95786 9.5154 2.93656 8.4611 2.62637 7.12463Z",
+    fill: "white"
+  })));
+}
+
+var ForwardRef = /*#__PURE__*/React.forwardRef(SvgMarketplaceIcon);
+export default __webpack_public_path__ + "static/media/marketplace-icon.43dda669c276ba1bc2890418ffae8cdf.svg";
+export { ForwardRef as ReactComponent };
