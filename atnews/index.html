@@ -1,0 +1,375 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Primary Meta Tags -->
+        <title>AT News</title>
+        <meta name="title" content="AT News">
+        <meta name="description" content="AT News app brings you information from a variety of sources on a variety of topics.">
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:description" content="AT News app brings you information from a variety of sources on a variety of topics." itemprop="description" />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content="https://AT News.com" />    
+        <meta property="og:title" content="AT News" itemprop="name" />
+        <meta property="og:image" content="img/background.jpg" />
+        <meta property="og:image:alt" content="AT News" />
+        <meta property="og:site_name" content="AT News" />
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://AT News.com" />   
+        <meta property="twitter:title" content="AT News" />
+        <meta property="twitter:description" content="AT News app brings you information from a variety of sources on a variety of topics."/>
+        <meta property="twitter:image" id="link_image" content="img/background.jpg" />
+
+        <!--ICON-->
+        <link rel="apple-touch-icon" sizes="57x57" href="img/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="img/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="img/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="img/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="img/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="img/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="img/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="img/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="img/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="img/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+        <link rel="manifest" href="img/manifest.json">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="img/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-R545G3RKMK"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-R545G3RKMK');
+        </script>
+        
+        <style>
+            html {
+                font-family: Arial, Helvetica, sans-serif;
+                background: #f0f2f5;
+            }
+            a:link,a:visited,a:hover,a:active {
+                color: black;
+                text-decoration: none;
+            }
+            a.btn:link,a.btn:visited,a.btn:hover,a.btn:active {
+                color: white;
+                text-decoration: none;
+                font-weight: 600;
+            }
+            .container-main{
+                border: solid #dddfe2;
+                border-width: 1.5px;
+                border-radius: 10px;
+                background: white;
+                max-width: 800px;
+                margin: 10px auto;
+            }
+            img,object.image {
+                width: 100%;
+                height: 100%;
+            }
+            .dtl-img {
+                width: 40px;
+                height: 40px;
+            }
+            .dtl-img > img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            img.logo{                
+                border-radius: 50%;
+            }
+            .logo-wrap {
+                width: 50px;
+            }
+            .logo-container {
+                margin: 10px;
+                position: relative;
+            }
+            .logo-title{
+                position: absolute;
+                top: 14px;
+                left: 60px;
+                font-size: larger;
+                font-weight: bold;
+            }
+            .space{
+                margin-top:10px;
+            }
+            .image-wrap {
+                position: relative;
+            }
+            .image-wrap > .google_play {
+                width: 200px;
+                position: absolute;
+                right: 10px;
+                bottom: 10px;
+            }
+            .image-wrap > .app_store {
+                width: 200px;
+                position: absolute;
+                right: 220px;
+                bottom: 10px;
+            }
+            .container-desc{
+                background: #f0f2f5;
+                padding: 20px;
+                text-align: center;
+            }
+            .container-desc > .new.Tit {
+                font-weight: 500;
+            }
+            .container-desc > .desc {
+                text-align: left;
+            }
+            .container-btn {
+                padding: 20px;
+                text-align: center;
+                background: #1b74e4;
+                border-radius: 0px 0px 10px 10px;
+            }
+            .data-detail{
+                display: block;
+            }
+
+            .dtl-content {
+                position: relative;
+                border-bottom: solid #dddfe2;
+                border-bottom-width: 1.5px;
+            }
+            .dtl-content > .dtl-ctt {
+                position: absolute;
+                top: 12px;
+                left: 45px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                width: 80vw;
+            }    
+            .footer{
+                max-width: 800px;
+                margin: 10px auto;
+            }
+            * {box-sizing: border-box}
+            body {font-family: Verdana, sans-serif; margin:0}
+            .mySlides {display: none}
+            img {vertical-align: middle;}
+
+            /* Slideshow container */
+            .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+            }
+
+            /* Next & previous buttons */
+            .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            }
+
+            /* Position the "next button" to the right */
+            .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+            }
+
+            /* On hover, add a black background color with a little bit see-through */
+            .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+            }
+
+            /* Caption text */
+            .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+            }
+
+            /* Number text (1/3 etc) */
+            .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+            }
+
+            /* The dots/bullets/indicators */
+            .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+            }
+
+            .active, .dot:hover {
+            background-color: #717171;
+            }
+
+            /* Fading animation */
+            .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+            }
+
+            @keyframes fade {
+            from {opacity: .4} 
+            to {opacity: 1}
+            }
+
+            /* On smaller screens, decrease text size */
+            @media only screen and (max-width: 300px) {
+            .prev, .next,.text {font-size: 11px}
+            }      
+        </style>
+     </head>  
+     <body>
+        <div class="container">
+            <div class="container-main">
+                <div class="logo-container">
+                    <div class="logo-wrap">
+                        <a href="https://play.google.com/store/apps/details?id=nta304.com.atnews">
+                            <img class="logo" src="img/icon.png?v=1.12">
+                        </a>
+                    </div>
+                    <a href="https://play.google.com/store/apps/details?id=nta304.com.atnews" class="logo-title"> AT News - 24/7 Update</a>                    
+                </div>
+                <a class= "data-detail">
+                    <div class="container-full space">
+                        <div class="image-wrap">
+                            <img class="image bg" src="img/background.jpg" alt="AT News - 24/7 Update">
+                            <a class="google_play" href="https://play.google.com/store/apps/details?id=nta304.com.atnews">
+                                <img src="img/google_play.png" alt="Google play AT News">
+                            </a>
+                            <a class="app_store" href="#">
+                                <img src="img/app_store.png" alt="App store play AT News">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="container-desc"> 
+                        <div class="desc"> 
+                            <strong>The AT News </strong>app brings you infos from many different sources with a variety of topics. <br>
+                            Personalize your experience and choose the infos you want by category: Fashion, Football, Music, Movies, and more <br>
+                            About the features: <br>
+                            - Font controls to increase or decrease the story text size to suit you <br>
+                            - Updated info from more than 30 infos, helping you update information quickly and select your favorite infos from many sources. <br>
+                            - Receive infos alerts. <br>
+                            - High-quality photos and videos. <br>
+                            - Share infos and stories easily. <br>
+                            - Bookmarks articles, and videos to watch later. <br>
+                            - Review reading history. <br>
+                        </div>
+                    </div>
+                    <div class="container-slide">
+                        <div class="slideshow-container">
+                            <div class="mySlides fade">
+                              <div class="numbertext">1 / 5</div>
+                              <img src="img/feature_1.jpg" style="width:100%">
+                              <div class="text">24/7 Hot Update</div>
+                            </div>
+                            
+                            <div class="mySlides fade">
+                              <div class="numbertext">2 / 5</div>
+                              <img src="img/feature_2.jpg" style="width:100%">
+                              <div class="text">From 30+ Source</div>
+                            </div>
+                            
+                            <div class="mySlides fade">
+                              <div class="numbertext">3 / 5</div>
+                              <img src="img/feature_3.jpg" style="width:100%">
+                              <div class="text">Trend Video</div>
+                            </div>
+
+                            <div class="mySlides fade">
+                                <div class="numbertext">4 / 5</div>
+                                <img src="img/feature_4.jpg" style="width:100%">
+                                <div class="text">Easy To Flow Many Topics</div>
+                            </div>
+
+                            <div class="mySlides fade">
+                                <div class="numbertext">5 / 5</div>
+                                <img src="img/feature_5.jpg" style="width:100%">
+                                <div class="text">Easy to adjust font size, dark mode</div>
+                            </div>
+                            
+                            <a class="prev" onclick="plusSlides(-1)">❮</a>
+                            <a class="next" onclick="plusSlides(1)">❯</a>
+                            
+                            </div>
+                            <br>
+                            
+                            <div style="text-align:center">
+                              <span class="dot" onclick="currentSlide(1)"></span> 
+                              <span class="dot" onclick="currentSlide(2)"></span> 
+                              <span class="dot" onclick="currentSlide(3)"></span> 
+                              <span class="dot" onclick="currentSlide(4)"></span> 
+                              <span class="dot" onclick="currentSlide(5)"></span> 
+                            </div>
+                        </div>
+                    </div>
+                </a>          
+            </div>
+        </div>
+        <div class="footer space">
+            © Thiện Ân Corporation . All rights reserved.
+        </div>        
+     </body>  
+     <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+        showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+        showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
+        }
+     </script>
+</html>
