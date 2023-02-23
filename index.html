@@ -262,20 +262,25 @@
                 position: relative;
             }
             .img-logo{
-                width: 100px;
+                width: 40px;
             }
-            .dtl-tit {
-                position: absolute;
-                top: 32px;
-                left: -40%;
-                font-weight: 500;
-                font-size: 25px;
+            .data-detail{
+                display: block;
             }
-            .dtl-info {
-                border-bottom: solid #ffffff;
+
+            .dtl-content {
+                position: relative;
+                border-bottom: solid white;
                 border-bottom-width: 1.5px;
-                border-top: solid #ffffff;
-                border-top-width: 1.5px;
+            }
+            .dtl-content > .dtl-ctt {
+                position: absolute;
+                top: 12px;
+                left: 45px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                width: 80vw;
             }
             .footer {                
                 padding: 20px;
@@ -368,16 +373,17 @@
               <!--container slide-->
 
               <!--container list app-->
-              <div class="container-desc" style="padding-top: 0px;">
-                 <div class="container-head" style="padding-bottom: 20px;">List of App</div>
-                 <div class="dtl-info">
-                     <a href="https://nta304.com/atnews/" class="container-dtl">
-                        <div class="img-logo">
-                            <img src="https://nta304.com/atnews/img/icon.png?v=1.28" alt="AT News Update 24/7">
+              
+              <div class="container-datas" style="background: #f0f2f5; padding-bottom: 20px;">
+                    <div class="container-head">List App</div>
+                    <a class= "data-detail" href="https://nta304.com/atnews/">
+                        <div class="dtl-content">
+                            <div class="dtl-img">
+                                <img src="https://nta304.com/atnews/img/icon.png?v=1.28" alt="AT NEWS - 24/7 Hot News Update">
+                            </div>
+                            <span class="dtl-ctt">AT NEWS - 24/7 Hot News Update</span>
                         </div>
-                        <span class="dtl-tit">AT News - Update 24/7</span>
                     </a>
-                 </div>   
               </div>
               <!--container list app-->
 
